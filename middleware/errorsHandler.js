@@ -1,4 +1,4 @@
-const { INTERNAL_SERVER_ERROR } = require('../errors/statusCode');
+const { INTERNAL_SERVER_ERROR } = require('../errors/StatusCodes');
 
 module.exports = (err, req, res, next) => {
   if (err.statusCode) {

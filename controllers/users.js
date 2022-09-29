@@ -5,7 +5,7 @@ const User = require('../models/user');
 const BadRequest = require('../errors/badRequest');
 const NotFound = require('../errors/notFound');
 const Conflicted = require('../errors/conflicted');
-const { CREATED_CODE } = require('../errors/statusCode');
+const { CREATED_CODE } = require('../errors/StatusCodes');
 
 module.exports.createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
