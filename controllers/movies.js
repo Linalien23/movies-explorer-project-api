@@ -1,7 +1,7 @@
 const Movie = require('../models/movie');
-const BadRequest = require('../errors/badRequest');
-const NotFound = require('../errors/notFound');
-const Forbidden = require('../errors/forbidden');
+const BadRequest = require('../errors/BadRequest');
+const NotFound = require('../errors/NotFound');
+const Forbidden = require('../errors/Forbidden');
 
 module.exports.getMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })

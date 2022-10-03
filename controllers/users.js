@@ -2,9 +2,9 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const BadRequest = require('../errors/badRequest');
-const NotFound = require('../errors/notFound');
-const Conflicted = require('../errors/conflicted');
+const BadRequest = require('../errors/BadRequest');
+const NotFound = require('../errors/NotFound');
+const Conflicted = require('../errors/Conflicted');
 const { CREATED_CODE } = require('../errors/StatusCodes');
 
 module.exports.createUser = (req, res, next) => {
