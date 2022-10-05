@@ -5,7 +5,7 @@ const User = require('../models/user');
 const BadRequest = require('../errors/BadRequest');
 const NotFound = require('../errors/NotFound');
 const Conflicted = require('../errors/Conflicted');
-const { CREATED_CODE } = require('../errors/StatusCodes');
+const { CREATED } = require('../errors/StatusCodes');
 
 module.exports.createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
@@ -20,7 +20,7 @@ module.exports.createUser = (req, res, next) => {
         name: user.name,
         _id: user._id,
       };
-      res.status(CREATED_CODE).send(userData);
+      res.status(CREATED).send(userData);
     })
     .catch((err) => {
       if (err.code === 11000) {

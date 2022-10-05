@@ -34,19 +34,19 @@ module.exports.moviesCreateValidate = celebrate({
     description: Joi.string().required(),
     image: Joi.string().required().custom((value, helpers) => {
       if (!validator.isURL(value)) {
-        return helpers.error('Некорректная ссылка.');
+        return helpers.message('Некорректная ссылка.');
       }
       return value;
     }),
     trailerLink: Joi.string().required().custom((value, helpers) => {
       if (!validator.isURL(value)) {
-        return helpers.error('Некорректная ссылка.');
+        return helpers.message('Некорректная ссылка.');
       }
       return value;
     }),
     thumbnail: Joi.string().required().custom((value, helpers) => {
       if (!validator.isURL(value)) {
-        return helpers.error('Некорректная ссылка.');
+        return helpers.message('Некорректная ссылка.');
       }
       return value;
     }),
